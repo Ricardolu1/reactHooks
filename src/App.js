@@ -23,11 +23,12 @@ function App() {
      age:user.age+1
     })
   }
-  const addHobbit = (x)=>{
-    let newHobbit = Math.random()
+  const addHobbit = (x)=>{//
+    user.hobbies.splice(1,1)
     setUser({
       ...user,
-      hobbies:[...user.hobbies,newHobbit]
+      hobbies:[...user.hobbies]//函数被执行一次，数组都会被拷贝一次，就保持同步更新了
+      //跟这样写效果是一样的  hobbies:user.hobbies
     })
   }
 
